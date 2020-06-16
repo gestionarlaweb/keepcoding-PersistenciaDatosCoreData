@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Batallas" representedClassName="Batallas" syncable="YES" codeGenerationType="class">
+        <attribute name="avatarHeroe" optional="YES" attributeType="String"/>
+        <attribute name="avatarVillano" optional="YES" attributeType="String"/>
+        <attribute name="ganadorHeroe" optional="YES" attributeType="String"/>
+        <attribute name="ganadorVillano" optional="YES" attributeType="String"/>
+        <attribute name="idBatalla" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="batHeroe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Heroes" inverseName="batalla" inverseEntity="Heroes"/>
+        <relationship name="batVillano" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Villanos" inverseName="batalla" inverseEntity="Villanos"/>
+    </entity>
+    <entity name="Heroes" representedClassName="Heroes" syncable="YES" codeGenerationType="class">
+        <attribute name="bioHeroe" optional="YES" attributeType="String"/>
+        <attribute name="imageHeroe" optional="YES" attributeType="String"/>
+        <attribute name="nameHeroe" optional="YES" attributeType="String"/>
+        <attribute name="powerHeroe" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="batalla" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Batallas" inverseName="batHeroe" inverseEntity="Batallas"/>
+    </entity>
+    <entity name="Villanos" representedClassName="Villanos" syncable="YES" codeGenerationType="class">
+        <attribute name="bioVillano" optional="YES" attributeType="String"/>
+        <attribute name="imageVillano" optional="YES" attributeType="String"/>
+        <attribute name="nameVillano" optional="YES" attributeType="String"/>
+        <attribute name="powerVillano" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="batalla" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Batallas" inverseName="batVillano" inverseEntity="Batallas"/>
+    </entity>
+    <elements>
+        <element name="Batallas" positionX="9" positionY="90" width="128" height="148"/>
+        <element name="Heroes" positionX="-102.75390625" positionY="-83.7734375" width="128" height="118"/>
+        <element name="Villanos" positionX="124.44921875" positionY="-87.9140625" width="128" height="118"/>
+    </elements>
+</model>
